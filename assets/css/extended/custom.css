@@ -1,0 +1,11 @@
+:root[data-theme="dark"] {
+    --theme: #000000;
+    --entry: #0a0a0a;
+    --code-block-bg: #000000;
+    --code-bg: #000000;
+    --border: rgb(30, 30, 30);
+}
+
+body {
+    font-family: Arial, sans-serif !important;
+}

@@ -1,0 +1,33 @@
+baseURL = 'https://blog.gnominis.com/'
+languageCode = 'en-us'
+title = 'Gnominis blog is the patient zero'
+theme = "PaperMod"
+enableRobotsTXT = true
+
+[params]
+  defaultTheme = "dark"
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  author = "Gnominis"
+  description = "I'm being held hostage by tech. Help. Experimenting with gadgets, homelab, AI, and scripts."
+
+[params.homeInfoParams]
+  Title = "My Lumps"
+  Content = "Random notes, experiments and scripts."
+
+[params.schema]
+  publisherType = "Person"
+
+[[menu.main]]
+  name = "Lumps"
+  url = "/lumps/"
+  weight = 1
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 2
+
+[markup.highlight]
+  style = "monokai"
+  noClasses = false
