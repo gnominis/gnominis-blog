@@ -74,9 +74,9 @@ input[type=range] {
 <div class="slider-group">
   <div class="slider-header">
     <span class="slider-label">Starting Sum</span>
-    <span class="slider-value" id="disp-s">€10,000</span>
+    <span class="slider-value" id="disp-s">€0</span>
   </div>
-  <input type="range" id="sl-s" min="0" max="200000" step="1000" value="10000">
+  <input type="range" id="sl-s" min="0" max="50000" step="50" value="0">
 </div>
 
 <div class="slider-group">
@@ -253,10 +253,10 @@ input[type=range] {
     } else {
       M = solveM(S, R, Y);
       // Dynamically expand slider range so the thumb position stays meaningful
-      const needed = Math.max(5000, Math.ceil(M * 2 / 1000) * 1000);
+      const needed = Math.max(2000, Math.ceil(M * 2 / 100) * 100);
       if (needed !== +slM.max) {
         slM.max = needed;
-        slM.step = needed > 50000 ? 1000 : needed > 20000 ? 500 : needed > 10000 ? 100 : 10;
+        slM.step = needed > 50000 ? 500 : needed > 10000 ? 100 : needed > 2000 ? 50 : 10;
       }
       slM.value = M;
     }
