@@ -1,4 +1,4 @@
-baseURL = 'https://blog.gnominis.com/'
+baseURL = 'https://gnominis.com/'
 languageCode = 'en-us'
 title = 'Gnominis'
 theme = "PaperMod"
