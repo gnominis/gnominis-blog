@@ -1,6 +1,6 @@
 baseURL = 'https://blog.gnominis.com/'
 languageCode = 'en-us'
-title = 'Gnominis blog is the patient zero'
+title = 'Gnominis'
 theme = "PaperMod"
 enableRobotsTXT = true
 
@@ -9,24 +9,27 @@ enableRobotsTXT = true
   ShowReadingTime = true
   ShowPostNavLinks = true
   author = "Gnominis"
-  description = "I'm being held hostage by tech. Help. Experimenting with gadgets, homelab, AI, and scripts."
+  description = "Notes on homelab, AI, automation, and engineering."
 
 [params.homeInfoParams]
-  Title = "My Lumps"
-  Content = "Random notes, experiments and scripts."
+  Title = "Gnominis"
+  Content = "Notes on homelab, AI, automation, and engineering."
 
 [params.schema]
   publisherType = "Person"
 
 [[menu.main]]
-  name = "Lumps"
-  url = "/lumps/"
+  name = "Posts"
+  url = "/posts/"
   weight = 1
 
 [[menu.main]]
   name = "About"
   url = "/about/"
   weight = 2
+
+[markup.goldmark.renderer]
+  unsafe = true
 
 [markup.highlight]
   style = "monokai"

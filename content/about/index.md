@@ -4,4 +4,4 @@ draft = false
 title = 'About'
 +++
 
-Great things will happen here. You just wait.
+Writing about homelab setups, AI experiments, automation, and engineering notes.
