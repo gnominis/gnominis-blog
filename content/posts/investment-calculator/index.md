@@ -21,12 +21,12 @@ Move any slider. The others adjust automatically to keep the end result at exact
   font-size: 0.95rem;
 }
 .slider-group {
-  margin-bottom: 1.4rem;
+  margin-bottom: 0.6rem;
 }
 .slider-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.2rem;
 }
 .slider-label { color: #999; }
 .slider-value { font-weight: 600; color: #e2e2e2; }
@@ -40,7 +40,7 @@ input[type=range] {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.75rem;
-  margin: 2rem 0 1.5rem;
+  margin: 1rem 0 1rem;
   text-align: center;
 }
 .summary-item {
@@ -252,11 +252,19 @@ input[type=range] {
       slY.value = Y;
     } else {
       M = solveM(S, R, Y);
+      // Dynamically expand slider range so the thumb position stays meaningful
+      const needed = Math.max(5000, Math.ceil(M * 2 / 1000) * 1000);
+      if (needed !== +slM.max) {
+        slM.max = needed;
+        slM.step = needed > 50000 ? 1000 : needed > 20000 ? 500 : needed > 10000 ? 100 : 10;
+      }
       slM.value = M;
     }
 
     document.getElementById('disp-s').textContent = fmt(S);
-    document.getElementById('disp-m').textContent = fmt(Math.round(M));
+    const mLabel = Math.round(M);
+    const mAnnual = Math.round(M * 12);
+    document.getElementById('disp-m').textContent = fmt(mLabel) + '/mo  (' + fmt(mAnnual) + '/yr)';
     document.getElementById('disp-r').textContent = fmtR(R);
     document.getElementById('disp-y').textContent = Y + (Y >= 60 ? '+ years' : ' years');
 
