@@ -1,5 +1,5 @@
 +++
-date = '2026-03-08T12:00:00+02:00'
+date = '2026-03-08T08:00:00+00:00'
 draft = false
 title = 'How Long Until Your First Million? An Interactive Calculator'
 +++
